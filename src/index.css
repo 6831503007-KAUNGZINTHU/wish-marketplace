@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    /* Brand Navy & Sky Blue Design System */
+    --brand-navy: #243B64;
+    --brand-navy-dark: #1A2B49;
+    --brand-navy-light: #2E4B7E;
+    --brand-blue: #4F86D9;
+    --brand-blue-hover: #3568B5;
+    --brand-blue-light: #EDF4FF;
+    --brand-blue-subtle: #F3F7FF;
+
+    /* Surfaces & Layout */
+    --bg-page: #F7F9FC;
+    --bg-card: #FFFFFF;
+    --text-main: #263244;
+    --text-secondary: #667085;
+    --border-color: #E0E7F0;
+
+    /* Semantic Status */
+    --status-success: #287A55;
+    --status-success-bg: #EAF6F0;
+    --status-warning: #B7791F;
+    --status-warning-bg: #FEF7EC;
+    --status-error: #C0392B;
+    --status-error-bg: #FDF2F2;
+
+    /* Compatibility variables */
+    --brand-accent: #4F86D9;
+    --brand-accent-hover: #3568B5;
+    --brand-accent-subtle: #EDF4FF;
+    --brand-secondary: #243B64;
+    --brand-secondary-hover: #1A2B49;
+    --brand-secondary-subtle: #EDF4FF;
+    --budget-green: #287A55;
+  }
+
+  .dark {
+    --bg-page: #0B0F19;
+    --bg-card: #111827;
+    --text-main: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --border-color: #1E293B;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D0D5DD;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #98A2B3;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+  html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+/* Custom soft drop shadow for modern startup look */
+.shadow-soft {
+  box-shadow: 0 1px 3px 0 rgba(36, 59, 100, 0.06), 0 1px 2px -1px rgba(36, 59, 100, 0.04);
+}
+html.dark .shadow-soft {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.35), 0 1px 2px -1px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 6px 16px -2px rgba(36, 59, 100, 0.09), 0 2px 4px -1px rgba(36, 59, 100, 0.04);
+}
+html.dark .shadow-card-hover {
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.5), 0 4px 8px -2px rgba(0, 0, 0, 0.35);
+}
+
+/* Hide scrollbars on horizontal pill/tab bars while keeping touch scrolling */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe area padding for modern mobile viewports */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
