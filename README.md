@@ -36,7 +36,9 @@ This repository is a Maven Spring Boot project (`pom.xml` at the root) configure
   - **Password**: *(leave empty)*
 
 ### Step 4: Test Login Credentials
-- **Demo Password (for all pre-seeded accounts)**: `password123`
+- **Buyer / Seller Login**: `sarah@example.com` (Password: `password123`)
+- **Seller Login**: `alex@example.com` (Password: `password123`)
+- **Admin Login**: `admin@wishmarket.com` (Password: `password123`)
 - You can log in using any seeded Buyer, Seller, or Admin account (or switch between demo accounts directly from the top navigation bar, or register a new account).
 
 ---
